@@ -62,23 +62,29 @@ En la Figura (\ref{fig:circuito}) se muestra el circuito a utilizar en el examen
 \end{figure}
 
 
-\section{Esquema que describa las tareas que se definieron en el desarrollo del algoritmo.}\label{intro}
-
-
 
 \section{Esquema donde describa las tareas que se definieron en el desarrollo del algoritmo.}\label{intro}
+
+1.Buscando reducir al máximo el uso de pines digitales se buscó y a la final lograrlo, puentear 8 integrados 74HC595 en serie; al hacer esto la información dada al primer integrado será la misma que recibirán los demás, esto también nos lleva a conectar los LED’S en grupos de ocho para que cada integrado controle un grupo. Las resistencias tienen la labor de controlar el voltaje ya que los integrados y los leds solo soportan 5V.
+
+2.Se usa el comando shiftOut() la cual se encarga de desplazar hacia la salida un bit cada vez, comienza a partir del bit mas significativo o menos significativo en este caso se inicio desde el bit  menos significativo usando el comando LSBFIRST.
+Se programaron los 3 pines que van conectados del arduino al integrado en OUTPUT (salida).
+Se obtiene que los leds formen figura.
+
+
 
 \newpage
 \section{Algoritmo implementado.}\label{intro}
 Algoritmo base.
 \begin{figure}[h]
-\includegraphics[width=12cm]{Algoritmo.jpeg}
+\includegraphics[width=10cm]{Algoritmo.jpeg}
 \centering
 \caption{Algoritmo Implementado}
 \label{fig:Algoritmo}
 \end{figure}
 
-\newpage
+
+
 \section{Problemas de desarrollo.}\label{intro}
 Se usa el comando shiftOut() la cual se encarga de desplazar hacia la salida un bit cada vez, comienza a partir del bit mas significativo o menos significativo en este caso se inicio desde el bit  menos significativo usando el comando LSBFIRST.
 
@@ -92,22 +98,20 @@ Se obtiene que los leds formen la figura.
 \caption{Figura final}
 \label{fig:figura #5}
 \end{figure}
-
-Siempre que el usuario ingrese alguna opcion siempre aparecera de la primero la figura.
-
 \newpage
+Siempre que el usuario ingrese alguna opcion siempre aparecera de la primero la figura.
 
 Se le muestra al usuario por medio de la funcion "verificacion" que todos los leds funcionan.
 
 \begin{figure}[h]
 \includegraphics[width=10cm]{Verificacion.jpeg}
 \centering
-
 \caption{Verificacion}
 \label{fig:Verificacion}
 \end{figure}
+\newpage
 
-Creacion de la funcion imagen, en este caso se ingreso que una fila alumbrara y la siguiente no.
+Creacion de la funcion "imagen", en este caso se ingreso que una fila alumbrara y la siguiente no.
 \begin{figure}[h]
 \includegraphics[width=10cm]{Avance 3.jpeg}
 \centering
@@ -116,10 +120,6 @@ Creacion de la funcion imagen, en este caso se ingreso que una fila alumbrara y 
 \end{figure}
 
 
-
-
-
-\newpage
 \section{Evolución del algoritmo y consideraciones a tener en cuenta en la implementación.}\label{intro}
 Se crea un menu de manera que el usuario se le facilite la opcion que quiera elegir.
 
@@ -129,15 +129,17 @@ Se crea un menu de manera que el usuario se le facilite la opcion que quiera ele
 \caption{Avance del codigo}
 \label{fig:Avance 1}
 \end{figure}
-
-En la primera opcion esta la verificacion donde el usuario observará que todos los leds funcionan.
 \newpage
+
+En la primera opcion esta la verificación donde el usuario observará que todos los leds funcionan.
+
 \begin{figure}[h]
 \includegraphics[width=10cm]{Avance 2.jpeg}
 \centering
 \caption{Avance del codigo}
 \label{fig:Avance 2}
 \end{figure}
+
 
 Se crea la funcion "imagen" la cual da la orden a cada led de encender o apagar segun el usuario lo desee ingresando "1" si quiere encenderlo o "0" si desea apagarlo, formando asi la figura que desea.
 
